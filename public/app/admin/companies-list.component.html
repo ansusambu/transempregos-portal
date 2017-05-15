@@ -1,6 +1,13 @@
 <div class="container page-min-height">
-    <h2>Empresas</h2>
-    <a class="btn btn-primary" role="button" routerLink="/admin/company/create">Nova empresa</a>
+    <div class="flex-space-between">
+        <div>
+            <h2>Todas as Empresas</h2>
+            <hr class="hr">
+        </div>
+        <div>
+            <a class="btn btn-success" role="button" routerLink="/admin/company/create">Criar Empresa</a>
+        </div>
+    </div>
     <div class="col-md-12">
         <ul>
             <li *ngFor="let company of companies">

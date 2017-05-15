@@ -182,3 +182,14 @@ body {
     }
 }
 //  END - Footer
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        .btn {
+            border-radius: 0.25rem;
+        }
+    }
+}
