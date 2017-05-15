@@ -1,13 +1,43 @@
 <div class="container page-min-height">
-    <div class="flex-space-between">
-        <div>
-            <h2>Todas as Empresas</h2>
-            <hr class="hr">
+
+    <div class="title-filter">
+        <div class="flex-space-between">
+            <div>
+                <h2>Todas as Empresas</h2>
+                <hr class="hr">
+            </div>
+            <div>
+                <a class="btn btn-success btn-border-radius" role="button" routerLink="/admin/company/create">Criar Empresa</a>
+            </div>
         </div>
-        <div>
-            <a class="btn btn-success" role="button" routerLink="/admin/company/create">Criar Empresa</a>
-        </div>
+
+        <form class="form flex-space-between" action="">
+            <div class="form-group flex-space-between">
+                <label for="busca">
+                    <i class="icon icon-search"></i>
+                </label>
+                <input type="text" placeholder="Buscar nome da Empresa" id="busca" name="busca">
+            </div>
+
+            <div class="form-group flex-space-between">
+                <div class="filter-choose">
+                    <input type="radio" name="escolha" id="ativo">
+                    <label for="ativo">Ativo</label>
+
+                    <input type="radio" name="escolha" id="inativo">
+                    <label for="inativo">Inativo</label>
+
+                    <input type="radio" name="escolha" id="moderar">
+                    <label for="moderar">Moderar</label>
+
+                    <input type="radio" name="escolha" id="banido">
+                    <label for="banido">Banido</label>
+                </div>
+                <button type="button" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
     </div>
+
     <div class="col-md-12">
         <ul>
             <li *ngFor="let company of companies">

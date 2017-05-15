@@ -186,10 +186,31 @@ body {
 .flex-space-between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
 
-    div {
-        .btn {
-            border-radius: 0.25rem;
-        }
+.btn-border-radius {
+    border-radius: .25rem;
+}
+.form {
+    border: 1px solid;
+    border-radius: .25rem;
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .icon-search {
+        content: url(/dist/public/images/search.svg);
+        width: 16px;
+        height: 16px;
+    }
+
+    label {
+        margin: 0 10px;
+    }
+
+    #busca {
+        border: 0;
     }
 }
