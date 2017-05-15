@@ -38,12 +38,16 @@
         </form>
     </div>
 
-    <div class="col-md-12">
+    <div class="companies-list">
         <ul>
-            <li *ngFor="let company of companies">
-                <a [routerLink]="['/admin/company/details', company._id]">{{company.companyName}}</a>
-                <a [routerLink]="['/admin/company', company._id]" class="btn btn-secondary" role="button">Editar</a>
-                <button (click)="delete(company)" class="btn btn-danger">Excluir</button>
+            <li class="col-sm-12 flex-space-between" *ngFor="let company of companies">
+                <div class="left">
+                    <a [routerLink]="['/admin/company/details', company._id]">{{company.companyName}}</a>
+                </div>
+                <div class="rigth">
+                    <a [routerLink]="['/admin/company', company._id]" class="btn btn-secondary" role="button">Editar</a>
+                    <button (click)="delete(company)" class="btn btn-danger">Excluir</button>
+                </div>
             </li>
         </ul>
     </div>
