@@ -1,54 +1,75 @@
-<div class="container page-min-height">
+<div class="row">
+    <section class="configuration-area col-xs-12">
+        <div class="container">
+            <div class="flex-space-between">
+                <div class="page-content">
+                    <span>Todas as empresas</span>
+                    <span>Vagas em aberto</span>
+                </div>
 
-    <div class="title-filter">
-        <div class="flex-space-between">
-            <div>
-                <h2>Todas as Empresas</h2>
-                <hr class="hr">
+                <div class="configuration">
+                    <span><i class="icon-settings"></i>configurações</span>
+                </div>
             </div>
-            <div>
-                <a class="btn btn-success btn-border-radius" role="button" routerLink="/admin/company/create">Criar Empresa</a>
-            </div>
+            
         </div>
+    </section>
 
-        <form class="form flex-space-between" action="">
-            <div class="form-group flex-space-between vertical-center">
-                <label for="busca">
-                    <i class="icon icon-search"></i>
-                </label>
-                <input type="text" placeholder="Buscar nome da Empresa" id="busca" name="busca">
+    <section class="filter-area col-xs-12">
+        <div class="container">
+            <div class="flex-space-between">
+                <div>
+                    <h2 class="title">Todas as Empresas</h2>
+                    <hr class="hr">
+                </div>
+                <div>
+                    <a class="btn btn-success btn-border-radius btn-bg-color" role="button" routerLink="/admin/company/create"><i class="icon-create-company"></i>Criar Empresa</a>
+                </div>
             </div>
 
-            <div class="form-group flex-space-between vertical-center">
-                <div class="filter-choose">
-                    <input type="radio" name="escolha" id="ativo">
-                    <label for="ativo">Ativo</label>
-
-                    <input type="radio" name="escolha" id="inativo">
-                    <label for="inativo">Inativo</label>
-
-                    <input type="radio" name="escolha" id="moderar">
-                    <label for="moderar">Moderar</label>
-
-                    <input type="radio" name="escolha" id="banido">
-                    <label for="banido">Banido</label>
+            <form class="form flex-space-between" action="">
+                <div class="form-group flex-space-between vertical-center">
+                    <label for="busca">
+                        <i class="icon icon-search"></i>
+                    </label>
+                    <input type="text" placeholder="Buscar nome da Empresa" id="busca" name="busca">
                 </div>
-                <button type="button" class="btn btn-primary">Buscar</button>
-            </div>
-        </form>
-    </div>
 
-    <div class="companies-list">
-        <ul>
-            <li class="col-sm-12 flex-space-between" *ngFor="let company of companies">
-                <div class="left">
-                    <a [routerLink]="['/admin/company/details', company._id]">{{company.companyName}}</a>
+                <div class="form-group flex-space-between vertical-center">
+                    <div class="filter-choose">
+                        <input type="radio" name="escolha" id="ativo">
+                        <label for="ativo">Ativo</label>
+
+                        <input type="radio" name="escolha" id="inativo">
+                        <label for="inativo">Inativo</label>
+
+                        <input type="radio" name="escolha" id="moderar">
+                        <label for="moderar">Moderar</label>
+
+                        <input type="radio" name="escolha" id="banido">
+                        <label for="banido">Banido</label>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-border-radius">Buscar</button>
                 </div>
-                <div class="rigth">
-                    <a [routerLink]="['/admin/company', company._id]" class="btn btn-secondary" role="button">Editar</a>
-                    <button (click)="delete(company)" class="btn btn-danger">Excluir</button>
-                </div>
-            </li>
-        </ul>
-    </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="content-area col-xs-12">
+        <div class="container companies-list">
+            <ul>
+                <li class="col-sm-12 flex-space-between" *ngFor="let company of companies">
+                    <div class="left">
+                        <a [routerLink]="['/admin/company/details', company._id]">{{company.companyName}}</a>
+                    </div>
+                    <div class="rigth">
+                        <button>Desativar</button>
+                        <button>Banir</button>
+                        <!--<a [routerLink]="['/admin/company', company._id]" class="btn btn-secondary" role="button">Editar</a>
+                        <button (click)="delete(company)" class="btn btn-danger">Excluir</button>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 </div>
