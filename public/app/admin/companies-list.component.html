@@ -60,16 +60,26 @@
             <ul>
                 <li class="col-sm-12 flex-space-between" *ngFor="let company of companies">
                     <div class="left">
-                        <a [routerLink]="['/admin/company/details', company._id]">{{company.companyName}}</a>
+                        <a [routerLink]="['/admin/company/details', company._id]" class="flex-vertical-center"><i class="icon-status"></i>{{company.companyName}}</a>
                     </div>
-                    <div class="rigth">
-                        <button>Desativar</button>
-                        <button>Banir</button>
+                    <div class="rigth flex-space-between">
+                        <button class="bg-color-transparent non-border btn-desativar flex-vertical-center"><i class="icon-desativar"></i>Desativar</button>
+                        <button class="bg-color-transparent non-border btn-banir flex-vertical-center"><i class="icon-banir"></i>Banir</button>
                         <!--<a [routerLink]="['/admin/company', company._id]" class="btn btn-secondary" role="button">Editar</a>
                         <button (click)="delete(company)" class="btn btn-danger">Excluir</button>-->
                     </div>
                 </li>
             </ul>
+            <div class="pagination col-xs-12">
+                <a href="#">&lt;</a>
+                <a href="#">1</a>
+                <a class="active" href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&gt;</a>
+            </div>
         </div>
     </section>
 </div>

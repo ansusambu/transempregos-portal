@@ -256,6 +256,55 @@ body {
 .content-area {
     min-height: 250px;
     padding: 30px 0;
+
+    .companies-list {
+        li {
+            border-bottom: 1px solid #f6f6f6;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .non-border {
+            border: 0;
+        }
+
+        .bg-color-transparent {
+            background-color: transparent;
+        }
+
+        .icon-status {
+            content: url(/dist/public/images/circle-with-check-symbol.svg);
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        .icon-desativar {
+            content: url(/dist/public/images/cancel.svg);
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        .btn-desativar {
+            margin-right: 10px;
+            color: #cecece;
+        }
+
+        .btn-banir {
+            color: red;
+        }
+
+        .icon-banir {
+            content: url(/dist/public/images/stop-or-prohibition-sign.svg);
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        ul {
+            padding: 0;
+        }
+    }
 }
 
 .flex-space-between {
@@ -267,13 +316,44 @@ body {
     align-items: center;
 }
 
+.flex-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
 .btn-border-radius {
     border-radius: .25rem;
 }
 
-.companies-list {
+// Pagination
 
-    ul {
-        padding: 0;
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    a {
+        float: left;
+        color: #000;
+        padding: 0 16px;
+        text-decoration: none;
+        border-radius: .25rem;
+    }
+
+    a.active {
+        background-color: #4286f5;
+        color: #fff;
+    }
+
+    a:first-child,
+    a:last-child {
+        background-color: #cecece;
+        color: #fff;
+    }
+
+    a:hover:not(.active) {
+        background-color: #cecece;
+        color: #fff;
     }
 }
+
+// end pagination
